@@ -27,6 +27,8 @@ func main() {
 	//edit
 	router.HandleFunc("/bug/{id}", controllers.EditBugEndPoint).Methods("PUT")
 
+	router.HandleFunc("/families", controllers.GetFamiliesEndPoint).Methods("GET")
+
 	//Start server
 	println("Server mounted on http://localhost:420")
 	log.Fatal(http.ListenAndServe(":0420", router))
