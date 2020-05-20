@@ -14,9 +14,6 @@ func main() {
 	//ENRUTADOR
 	router := mux.NewRouter()
 
-	// bugs = append(bugs, models.Bug{ID: "12", Name: "Libelula", Description: "Best bug ever", Family: &models.Family{ID: "3", Name: "Example", SubFamily: "Example"}})
-	// bugs = append(bugs, models.Bug{ID: "10", Name: "Escorpion", Description: "Best bug ever"})
-
 	//endpoints
 	router.HandleFunc("/bugs", controllers.GetBugsEndPoint).Methods("GET")
 	router.HandleFunc("/bug/{id}", controllers.GetBugEndPoint).Methods("GET")
@@ -28,6 +25,7 @@ func main() {
 	router.HandleFunc("/bug/{id}", controllers.EditBugEndPoint).Methods("PUT")
 
 	router.HandleFunc("/families", controllers.GetFamiliesEndPoint).Methods("GET")
+	router.HandleFunc("/family/{id}", controllers.GetFamilyEndPoint).Methods("GET")
 
 	//Start server
 	println("Server mounted on http://localhost:420")
