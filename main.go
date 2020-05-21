@@ -26,6 +26,12 @@ func main() {
 
 	router.HandleFunc("/families", controllers.GetFamiliesEndPoint).Methods("GET")
 	router.HandleFunc("/family/{id}", controllers.GetFamilyEndPoint).Methods("GET")
+	//add
+	router.HandleFunc("/family", controllers.CreateFamilyEndPoint).Methods("POST")
+	//del
+	router.HandleFunc("/family/{id}", controllers.DeleteFamilyEndPoint).Methods("DELETE")
+	//edit
+	router.HandleFunc("/family/{id}", controllers.EditFamilyEndPoint).Methods("PUT")
 
 	//Start server
 	println("Server mounted on http://localhost:420")
